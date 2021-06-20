@@ -71,7 +71,8 @@
               "browserTarget": "ng-email:build:production"
             },
             "development": {
-              "browserTarget": "ng-email:build:development"
+              "browserTarget": "ng-email:build:development",
+              "open": true
             }
           },
           "defaultConfiguration": "development"
