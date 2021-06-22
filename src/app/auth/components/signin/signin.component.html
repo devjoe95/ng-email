@@ -1,0 +1,51 @@
+<div class="ui card">
+  <div class="content">
+    <div class="header">Log In to your account</div>
+  </div>
+  <div class="content">
+    <div
+      *ngIf="authForm.hasError('connectionOffline')"
+      class="ui error message transition tiny basic"
+    >
+      <i class="close icon"></i>
+      <p>No internet connection detected, failed to log in</p>
+    </div>
+    <div
+      *ngIf="authForm.hasError('credential')"
+      class="ui error message transition tiny basic"
+    >
+      <i class="close icon"></i>
+      <p>Incorrect username or password</p>
+    </div>
+    <form class="ui form" [formGroup]="authForm" (ngSubmit)="onSubmit()">
+      <app-input
+        label="Username"
+        [control]="authForm.controls.username"
+        [required]="true"
+      ></app-input>
+      <app-input
+        label="Password"
+        [control]="authForm.controls.password"
+        [required]="true"
+        type="password"
+      ></app-input>
+      <div class="inline field">
+        <div class="ui checkbox">
+          <input type="checkbox" formControlName="rememberMe" />
+          <label>Remember Me</label>
+        </div>
+      </div>
+      <button
+        [disabled]="authForm.invalid"
+        class="ui submit button primary tiny"
+        type="submit"
+      >
+        Log In
+      </button>
+    </form>
+  </div>
+  <div class="ui bottom attached teal message">
+    <i class="icon help"></i>
+    New member? <a [routerLink]="['/signup']">Create new account</a>.
+  </div>
+</div>

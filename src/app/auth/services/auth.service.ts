@@ -14,7 +14,7 @@ interface credentials {
 })
 export class AuthService {
   endpoint: string = 'https://api.angular-email.com/auth';
-  signedIn$ = new BehaviorSubject(false);
+  signedIn$: any = new BehaviorSubject(null);
   constructor(private _http: HttpClient) {}
   userNameAvailable(username: string): Observable<{ available: boolean }> {
     return this._http.post<{ available: boolean }>(
@@ -47,5 +47,11 @@ export class AuthService {
       })
     );
   }
+  signIn(credentials: credentials) {
+    return this._http.post(`${this.endpoint}/signin`, credentials).pipe(
+      tap(() => {
+        this.signedIn$.next(true);
+      })
+    );
+  }
 }
-  
