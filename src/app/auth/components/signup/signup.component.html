@@ -1,0 +1,62 @@
+<div class="ui card">
+  <div class="content">
+    <div class="header">Create an account</div>
+  </div>
+  <div class="content">
+    <div
+      *ngIf="authForm.hasError('connectionOffline')"
+      class="ui error message transition tiny basic"
+    >
+      <i class="close icon"></i>
+      <p>No internet connection detected, failed to sign up</p>
+    </div>
+    <form (ngSubmit)="onSubmit()" class="ui form" [formGroup]="authForm">
+      <app-input
+        label="Username"
+        [control]="authForm.controls.username"
+        [required]="true"
+      ></app-input>
+      <app-input
+        label="Password"
+        [control]="authForm.controls.password"
+        [required]="true"
+        type="password"
+      ></app-input>
+      <app-input
+        label="Password Confirmation"
+        [control]="authForm.controls.passwordConfirmation"
+        [required]="true"
+        type="password"
+      ></app-input>
+      <div
+        *ngIf="
+          authForm.controls.password.valid &&
+          authForm.controls.passwordConfirmation.valid &&
+          authForm.errors
+        "
+        class="ui pointing label red basic goooo"
+      >
+        <p *ngIf="authForm.errors.passwordsDoNotMatch">
+          Passwords do not match
+        </p>
+      </div>
+      <div class="inline required field">
+        <div class="ui checkbox">
+          <input type="checkbox" formControlName="agree" />
+          <label>I agree to the <a href=""> Terms and Conditions</a></label>
+        </div>
+      </div>
+      <button
+        [disabled]="authForm.invalid"
+        class="ui submit button primary tiny"
+        type="submit"
+      >
+        Sign Up
+      </button>
+    </form>
+  </div>
+  <div class="ui bottom attached teal message">
+    <i class="icon help"></i>
+    Already signed up? <a [routerLink]="['/']">Login here</a> instead.
+  </div>
+</div>

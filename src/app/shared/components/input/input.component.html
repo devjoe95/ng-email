@@ -1,0 +1,30 @@
+<div
+  class="ui field"
+  [ngClass]="{
+    error: control.dirty && control.errors,
+    required: required,
+    green: control.valid
+  }"
+>
+  <label [for]="label | kebabcase">{{ label }}</label>
+  <div class="ui icon input fluid" [ngClass]="{ loading: control.pending }">
+    <input [type]="type" [id]="label | kebabcase" [formControl]="control" />
+    <i *ngIf="control.pending" aria-hidden="true" class="spinner icon"></i>
+  </div>
+  <div *ngIf="showErrors()" class="ui label pointing red basic">
+    <p *ngIf="control.errors.required">{{ label }} is required</p>
+    <p *ngIf="control.errors.minlength">
+      {{ label }} must be grater than or equal
+      {{ control.errors.minlength.requiredLength }} character
+    </p>
+    <p *ngIf="control.errors.maxlength">
+      {{ label }} must be less than or equal
+      {{ control.errors.maxlength.requiredLength }} character
+    </p>
+    <p *ngIf="control.errors.pattern">
+      {{ label }} must be number or character
+    </p>
+    <p *ngIf="control.errors.userExists">{{ label }} is taken</p>
+    <p *ngIf="control.errors.connectionOffline">No internet connection detected, failed to search username</p>
+  </div>
+</div>
