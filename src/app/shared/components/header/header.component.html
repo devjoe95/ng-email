@@ -1,0 +1,43 @@
+<div class="ui secondary menu">
+  <div class="ui container">
+    <div class="header item">
+      <img
+        src="../../../../favicon.ico"
+        width="20px"
+        height="20px"
+        class="ui"
+      />
+      &nbsp; Ng Email
+    </div>
+    <a class="active item"><i class="icon home"></i> Home </a>
+    <a class="item"><i class="icon mail"></i> Messages </a>
+    <a class="item"><i class="icon users"></i> Friends </a>
+    <div class="right menu">
+      <div class="item">
+        <div class="ui icon input">
+          <input type="text" placeholder="Search..." />
+          <i class="search link icon"></i>
+        </div>
+      </div>
+      <div class="item">
+        <ng-container *ngIf="signedIn$ | async; else login">
+          <button class="mini ui button basic red" [routerLink]="['/signout']">
+            Logout
+          </button>
+        </ng-container>
+        <ng-template class="ui grid" #login>
+          <div class="column">
+            <button [routerLink]="['/']" class="ui button basic blue tiny">
+              Log In
+            </button>
+          </div>
+          <div class="column">
+            <button [routerLink]="['/signup']" class="ui button blue tiny">
+              Sign Up
+            </button>
+          </div>
+        </ng-template>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,2 +1,8 @@
-
-<router-outlet></router-outlet>
+<header>
+  <app-header [signedIn$]="signedIn$"></app-header>
+</header>
+<main>
+  <div class="ui container">
+    <router-outlet></router-outlet>
+  </div>
+</main>
