@@ -1,0 +1,9 @@
+.ui.celled.grid {
+  margin: 0;
+}
+.grid .column {
+  height: calc(100vh - 40px);
+}
+.ui.celled.grid > .column:not(.row), .ui.celled.grid > .row > .column {
+    padding: 0;
+}

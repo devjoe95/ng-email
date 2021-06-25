@@ -1,0 +1,11 @@
+<div class="ui celled animated big very relaxed selection list">
+  <ng-container *ngFor="let email of emails">
+    <div class="item" [routerLink]="[email.id]" routerLinkActive="active">
+      <img class="ui avatar image" [src]="email.img" />
+      <div class="aligned middle content">
+        <div class="header">{{ email.subject }}</div>
+        <p>{{ email.from }}</p>
+      </div>
+    </div>
+  </ng-container>
+</div>
