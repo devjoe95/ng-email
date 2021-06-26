@@ -1,0 +1,10 @@
+<div class="ui basic tertiary segment red inverted">
+  <p>From: {{ email.from }}</p>
+  <p>To: {{ email.to }}</p>
+  <p>Subject: {{ email.subject }}</p>
+</div>
+<div class="ui basic segment email-content">
+  <p *ngIf="!markContent; else htmlContent">{{ email.text }}</p>
+  <div class="ui divider"></div>
+  <ng-template #htmlContent> <p [innerHTML]="email.html"></p></ng-template>
+</div>

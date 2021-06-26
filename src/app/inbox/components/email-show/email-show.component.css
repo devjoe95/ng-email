@@ -1,0 +1,6 @@
+.email-content {
+  width: 100%;
+}
+.email-content p{
+    overflow-x: auto;
+}
