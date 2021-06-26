@@ -1,47 +1,39 @@
-
-<div class="ui menu stackable inverted fluid mini borderless  ">
-  <div class="ui container">
-    <div [routerLink]="['/']" class="header item">
-      <img
-        src="../../../../favicon.ico"
-        width="20px"
-        height="20px"
-        class="ui"
-      />
-      &nbsp; Ng Email
-    </div>
-    <div class="left menu" *ngIf="signedIn$ | async">
-      <a [routerLink]="['/inbox']" routerLinkActive="active blue" class="item"
-        ><i class="icon mail"></i> Inbox
-      </a>
-      <a class="item"><i class="icon users"></i> Friends </a>
-    </div>
-    <div class="right menu">
-      <div class="item">
-        <div class="ui icon input">
-          <input type="text" placeholder="Search..." />
-          <i class="search link icon"></i>
-        </div>
+<div class="ui menu stackable inverted fluid mini borderless">
+  <div [routerLink]="['/']" class="header item">
+    <img src="../../../../favicon.ico" width="20px" height="20px" class="ui" />
+    &nbsp; Ng Email
+  </div>
+  <div class="left menu" *ngIf="signedIn$ | async">
+    <a [routerLink]="['/inbox']" routerLinkActive="active red" class="item"
+      ><i class="icon mail"></i> Inbox
+    </a>
+    <a class="item"><i class="icon users"></i> Friends </a>
+  </div>
+  <div class="right menu">
+    <div class="item">
+      <div class="ui icon input">
+        <input type="text" placeholder="Search..." />
+        <i class="search link icon"></i>
       </div>
-      <div class="item">
-        <ng-container *ngIf="signedIn$ | async; else login">
-          <button class="mini ui button red" [routerLink]="['/signout']">
-            Logout
+    </div>
+    <div class="item">
+      <ng-container *ngIf="signedIn$ | async; else login">
+        <button class="mini ui button red" [routerLink]="['/signout']">
+          Logout
+        </button>
+      </ng-container>
+      <ng-template class="ui grid" #login>
+        <div class="column">
+          <button [routerLink]="['/']" class="ui button basic blue tiny">
+            Log In
           </button>
-        </ng-container>
-        <ng-template class="ui grid" #login>
-          <div class="column">
-            <button [routerLink]="['/']" class="ui button basic blue tiny">
-              Log In
-            </button>
-          </div>
-          <div class="column">
-            <button [routerLink]="['/signup']" class="ui button blue tiny">
-              Sign Up
-            </button>
-          </div>
-        </ng-template>
-      </div>
+        </div>
+        <div class="column">
+          <button [routerLink]="['/signup']" class="ui button blue tiny">
+            Sign Up
+          </button>
+        </div>
+      </ng-template>
     </div>
   </div>
 </div>
