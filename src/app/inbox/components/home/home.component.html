@@ -1,4 +1,27 @@
 <div class="ui grid celled stackable">
-  <div class="five wide column"><app-email-index></app-email-index></div>
+  <div class="ui vertical mini labeled icon menu one wide column">
+    <a class="item active red">
+      <i class="inbox icon"></i>
+      Inbox
+    </a>
+    <a class="item">
+      <i class="file outline icon"></i>
+      Draft </a
+    ><a class="item">
+      <i class="star outline icon"></i>
+      Stared </a
+    ><a class="item">
+      <i class="paper plane icon"></i>
+      Sent </a
+    ><a class="item">
+      <i class="shield alternate icon"></i>
+      Spam
+    </a>
+    <a class="item">
+      <i class="trash alternate icon"></i>
+      Trash
+    </a>
+  </div>
+  <div class="four wide column"><app-email-index></app-email-index></div>
   <div class="eleven wide column"><router-outlet></router-outlet></div>
 </div>

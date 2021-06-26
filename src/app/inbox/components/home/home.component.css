@@ -3,7 +3,12 @@
 }
 .grid .column {
   height: calc(100vh - 40px);
+  overflow-y: scroll;
 }
-.ui.celled.grid > .column:not(.row), .ui.celled.grid > .row > .column {
-    padding: 0;
+.grid .column:first-of-type {
+  overflow-y: inherit;
+}
+.ui.celled.grid > .column:not(.row),
+.ui.celled.grid > .row > .column {
+  padding: 0;
 }
