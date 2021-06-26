@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { map } from 'rxjs/operators';
-import { EmailService, EmailSummary } from '../../email.service';
+import { EmailSummary } from '../../email';
+import { EmailService } from '../../email.service';
 
 @Component({
   selector: 'app-email-index',

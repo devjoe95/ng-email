@@ -1,5 +1,16 @@
-.active {
+/* .active {
   background-color: rgba(56, 48, 81, 0.15);
-} 
-
-
+} */
+.item {
+  position: relative;
+}
+.item.active::after {
+  content: "";
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 5px;
+  position: absolute;
+  background-color: #DB2828;
+  visibility: visible;
+}
