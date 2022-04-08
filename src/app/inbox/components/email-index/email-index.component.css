@@ -3,14 +3,19 @@
 } */
 .item {
   position: relative;
+  cursor: pointer;
 }
 .item.active::after {
   content: "";
   top: 0;
   left: 0;
   height: 100%;
-  width: 5px;
+  width: 3px;
   position: absolute;
-  background-color: #DB2828;
+  background-color: #2185d0;
   visibility: visible;
+}
+i {
+  font-size: 1rem;
+  color: #555;
 }

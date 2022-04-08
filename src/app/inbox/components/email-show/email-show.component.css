@@ -1,6 +1,11 @@
 .email-content {
   width: 100%;
 }
-.email-content p{
-    overflow-x: auto;
+.email-content p {
+  overflow-x: auto;
+}
+strong{
+  display: inline-block;
+  padding-bottom: 30px;
+  font-size: 1.5rem;
 }

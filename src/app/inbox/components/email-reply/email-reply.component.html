@@ -1,0 +1,17 @@
+<div class="compose-btn">
+  <div
+    class="ui right floated animated button primary large"
+    (click)="showModal = true"
+  >
+    <div class="hidden content"><i class="send icon"></i></div>
+    <div class="visible content">Reply</div>
+  </div>
+</div>
+
+<app-modal *ngIf="showModal" (dismiss)="showModal = false">
+  <h3 modalTitle>Reply</h3>
+  <app-email-form
+    [email]="email"
+    (emailSubmit)="onSubmit($event)"
+  ></app-email-form>
+</app-modal>

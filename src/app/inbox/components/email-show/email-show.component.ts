@@ -7,7 +7,7 @@ import { Email } from '../../email';
   templateUrl: './email-show.component.html',
   styleUrls: ['./email-show.component.css'],
 })
-export class EmailShowComponent implements OnInit {
+export class EmailShowComponent {
   email!: Email;
   markContent: boolean = true;
 
@@ -16,6 +16,4 @@ export class EmailShowComponent implements OnInit {
       this.email = email;
     });
   }
-
-  ngOnInit(): void {}
 }

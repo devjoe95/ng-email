@@ -1,6 +1,6 @@
 <div class="ui grid celled stackable">
   <div class="ui vertical mini labeled icon menu one wide column">
-    <a class="item active red">
+    <a class="item active blue">
       <i class="inbox icon"></i>
       Inbox
     </a>
@@ -22,6 +22,9 @@
       Trash
     </a>
   </div>
-  <div class="four wide column"><app-email-index></app-email-index></div>
+  <div class="four wide column">
+    <app-email-create></app-email-create>
+    <app-email-index></app-email-index>
+  </div>
   <div class="eleven wide column"><router-outlet></router-outlet></div>
 </div>

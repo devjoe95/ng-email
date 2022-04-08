@@ -6,10 +6,8 @@ import { BehaviorSubject } from 'rxjs';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css'],
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
   @Input()
   signedIn$: BehaviorSubject<boolean> | undefined;
   constructor() {}
-
-  ngOnInit(): void {}
 }

@@ -4,7 +4,7 @@
     &nbsp; Ng Email
   </div>
   <div class="left menu" *ngIf="signedIn$ | async">
-    <a [routerLink]="['/inbox']" routerLinkActive="active red" class="item"
+    <a [routerLink]="['/inbox']" routerLinkActive="active blue" class="item"
       ><i class="icon mail"></i> Inbox
     </a>
     <a class="item"><i class="icon users"></i> Friends </a>
@@ -18,7 +18,7 @@
     </div>
     <div class="item">
       <ng-container *ngIf="signedIn$ | async; else login">
-        <button class="mini ui button red" [routerLink]="['/signout']">
+        <button class="mini ui basic button red" [routerLink]="['/signout']">
           Logout
         </button>
       </ng-container>

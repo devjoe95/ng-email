@@ -8,7 +8,7 @@ import { AuthService } from '../../services/auth.service';
   templateUrl: './signin.component.html',
   styleUrls: ['./signin.component.css'],
 })
-export class SigninComponent implements OnInit {
+export class SigninComponent {
   authForm = new FormGroup({
     username: new FormControl('', [
       Validators.required,
@@ -24,8 +24,6 @@ export class SigninComponent implements OnInit {
     rememberMe: new FormControl(false, [Validators.required]),
   });
   constructor(private _authService: AuthService, private _router: Router) {}
-
-  ngOnInit(): void {}
 
   onSubmit() {
     if (this.authForm.valid) {

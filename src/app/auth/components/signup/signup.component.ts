@@ -10,7 +10,7 @@ import { UniqueUsername } from '../../validators/unique-username';
   templateUrl: './signup.component.html',
   styleUrls: ['./signup.component.css'],
 })
-export class SignupComponent implements OnInit {
+export class SignupComponent   {
   authForm = new FormGroup(
     {
       username: new FormControl(
@@ -44,7 +44,6 @@ export class SignupComponent implements OnInit {
     private _router: Router
   ) {}
 
-  ngOnInit(): void {}
   onSubmit() {
     if (this.authForm.valid) {
       const { username, password, passwordConfirmation } = this.authForm.value;

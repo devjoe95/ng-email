@@ -13,6 +13,7 @@
   </div>
   <div *ngIf="showErrors()" class="ui label pointing red basic">
     <p *ngIf="control.errors.required">{{ label }} is required</p>
+    <p *ngIf="control.errors.email">Enter a valid email</p>
     <p *ngIf="control.errors.minlength">
       {{ label }} must be grater than or equal
       {{ control.errors.minlength.requiredLength }} character
@@ -25,6 +26,8 @@
       {{ label }} must be number or character
     </p>
     <p *ngIf="control.errors.userExists">{{ label }} is taken</p>
-    <p *ngIf="control.errors.connectionOffline">No internet connection detected, failed to search username</p>
+    <p *ngIf="control.errors.connectionOffline">
+      No internet connection detected, failed to search username
+    </p>
   </div>
 </div>

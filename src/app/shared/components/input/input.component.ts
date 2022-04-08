@@ -5,14 +5,12 @@ import { Component, Input, OnInit } from '@angular/core';
   templateUrl: './input.component.html',
   styleUrls: ['./input.component.css'],
 })
-export class InputComponent implements OnInit {
+export class InputComponent {
   @Input() control: any;
   @Input() label: string = '';
   @Input() required: boolean = false;
   @Input() type: string = 'text';
   constructor() {}
-
-  ngOnInit(): void {}
 
   showErrors() {
     const { dirty, touched, errors } = this.control;

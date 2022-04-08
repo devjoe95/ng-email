@@ -2,8 +2,6 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Email, EmailSummary } from './email';
 
-
-
 @Injectable({
   providedIn: 'root',
 })
@@ -18,5 +16,8 @@ export class EmailService {
 
   getEmail(id: string) {
     return this._http.get<Email>(`${this.endpoint}/${id}`);
+  }
+  sendEmail(email: Email) {
+    return this._http.post(this.endpoint, email);
   }
 }

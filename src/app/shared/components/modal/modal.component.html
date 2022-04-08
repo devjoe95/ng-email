@@ -1,0 +1,19 @@
+<div (click)="onDismissClick()" class="ui dimmer visible active">
+  <div (click)="$event.stopPropagation()" class="ui tiny modal active visible">
+    <i (click)="onDismissClick()" class="icon close"></i>
+    <div class="header">
+      <ng-content select="[modalTitle]"></ng-content>
+    </div>
+    <div class="content">
+      <ng-content></ng-content>
+    </div>
+    <div class="actions actions-default">
+      <button (click)="onDismissClick()" class="ui button primary">
+        Okay!
+      </button>
+    </div>
+    <div class="actions">
+      <ng-content select="[modalFooter]"></ng-content>
+    </div>
+  </div>
+</div>
